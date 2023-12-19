@@ -32,10 +32,10 @@ In order to run the GUI, run QuantumReg.py.
 #### Image Registration:
 1)	Open a single wavenumber reference image (.tiff file), may take a while.
 2)	Open QuantumViewer – process with the following steps
-    a)	Import hyperspectral data as .pickle file. **Select both .pickle files simultaneously**.
-    b)	Optionally: modify image orientation. Here: rotate image by 90°.
-    c)	Select single wavenumber and add it to the list.
-    d) 	Optionally: modify image mask.
+- a)	Import hyperspectral data as .pickle file. **Select both .pickle files simultaneously**.
+- b)	Optionally: modify image orientation. Here: rotate image by 90°.
+- c)	Select single wavenumber and add it to the list.
+- d) 	Optionally: modify image mask.
 3)	Obtain selected IR data and image mask (from the list in QuantumViewer).
 4)	Specify pixel size. After entering the input value in each field press enter to accepted new value, input turns light-grey.
 5)	Obtain image subset. Therefore press (5) and move the red square to the tissue section of interest (same as hyperspectral data) and
@@ -52,11 +52,10 @@ In order to run the GUI, run QuantumReg.py.
 As an example, we want to segment the ISOM region of the kidney.
 
 10)	Perform feature or spectral band selection of IR data incl. pre-processing options.
-  
-  e.	Delete single wavenumber from list.
-  f.	Perform image processing. Here 2nd derivative of absorbance.
-  g.	Select spectral features or bands. 
-  h.	Change between different visualizations.
+    - e)	Delete single wavenumber from list.
+    - f)	Perform image processing. Here 2nd derivative of absorbance.
+    - g)	Select spectral features or bands. 
+    - h)	Change between different visualizations.
 11)	Obtain features or spectral bands of IR data. Optionally select smoothing via a Gaussian filter. Make sure the correct pixel size is set.
 12)	Perform image segmentation. Here: k-means clustering (k=5) on masked image. 
 13)	Visualize  segmentation results and select ROI (left or right click on segments).
