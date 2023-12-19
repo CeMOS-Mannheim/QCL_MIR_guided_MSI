@@ -8,13 +8,14 @@ The implementation allows the user to process their data to their specific needs
 
 ### 1. Overview
 
-Operating system: Windows 10 Education
-Processor: Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz   3.70 GHz
-RAM: 32GB
-Python Interpreter: Python v3.8 
-Distribution: Anaconda3 (https://www.anaconda.com/download)
-Python IDE: PyCharm (https://www.jetbrains.com/de-de/pycharm/)
-Platform GUI: PyQt5 (https://pypi.org/project/PyQt5/)
+- Operating system: Windows 10 Education
+- Processor: Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz   3.70 GHz
+- RAM: 32GB
+- Python Interpreter: Python v3.8 
+- Distribution: Anaconda3 (https://www.anaconda.com/download)
+- Python IDE: PyCharm (https://www.jetbrains.com/de-de/pycharm/)
+- Platform GUI: PyQt5 (https://pypi.org/project/PyQt5/)
+
 Note: please choose any other Python integrated development environment (IDE)
 
 ### 2. Data
