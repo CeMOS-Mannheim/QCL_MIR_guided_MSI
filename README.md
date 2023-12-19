@@ -61,3 +61,8 @@ As an example, we want to segment the ISOM region of the kidney.
 13)	Visualize  segmentation results and select ROI (left or right click on segments).
 14)	Transfer segments into the frame of the single wavenumber image.
 
+![QuantumViewer window 2](./images/quantumViewer2.png)
+![QuantumRegistration window 2](./images/quantumReg2.png)
+![Smoothing settings](./images/smoothingSettings.png)
+![Segmentation settings](./images/segSettings.png)
+
