@@ -66,3 +66,12 @@ As an example, we want to segment the ISOM region of the kidney.
 ![Smoothing settings](./images/smoothingSettings.png)
 ![Segmentation settings](./images/segSettings.png)
 
+#### Generate ROI and measurement region:
+15)	Modify ROI, e.g. remove small objects or small holes.
+16)	Generate shape (e.g. normal or open holes)
+17)	Visualize shape on single wavenumber image. The ROI will appear in the “Infrared” list.
+18)	Include ROI into .mis-file. Select raster size (here 40µm) and type (Measurement area or ROI). Select Name.
+
+![QuantumRegistration window 3](./images/quantumReg3.png)
+![Hole filling settings](./images/holeFilling.png)
+![Resulting region](./images/resultImage.png)
