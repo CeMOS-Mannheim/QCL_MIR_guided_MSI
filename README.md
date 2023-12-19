@@ -19,9 +19,9 @@ Note: please choose any other Python integrated development environment (IDE)
 
 ### 2. Data
 We provide a [test data set](https://figshare.com/s/6af0358f6b691eb9caaa) that consists of 
-•	an empty (no measurement regions included) .mis file,
-•	a single wavenumber image used as a reference (non-teached image file for simplicity)
-•	and hyperspectral test data set of a kidney section (size was reduced 2x for simplicity).
+- an empty (no measurement regions included) .mis file,
+- a single wavenumber image used as a reference (non-teached image file for simplicity)
+- a hyperspectral test data set of a kidney section (size was reduced 2x for simplicity).
 Accordingly, the respective pixels sizes are: 4.66 µm for the refrence image and 9.32 µm for the hyperspectral dataset.
 
 ### 3. Instructions:
