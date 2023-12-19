@@ -1,0 +1,91 @@
+"""
+notes
+"""
+
+import sys
+from PyQt5 import QtWidgets, QtGui, QtCore
+
+from QCL.Appearance.DarkMode import EnableDarkMode
+
+
+class Registration_Settings_Dialog(QtWidgets.QMainWindow):
+    def __init__(self, parent = None):
+        super(Registration_Settings_Dialog, self).__init__(parent)
+        #super().__init__()
+        #self.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
+
+        self.initMe()
+
+    def initMe(self):
+        # Define geometry of this window
+        self.setGeometry(550, 240, 250, 60)
+        self.setMaximumSize(250, 180)
+        self.setWindowTitle('Settings')
+
+        self.centralWidget = QtWidgets.QWidget(self)
+        self.centralWidget.setObjectName('centralWidget')
+
+        self.mainGridLayout = QtWidgets.QGridLayout(self.centralWidget)
+
+        # Registration Settings
+        textImageRegistration = QtWidgets.QLabel(
+            '<font size="4"><p style="font-variant:small-caps;"><b>Registration Settings:<b></p>',
+            self)
+
+        self.registrationType = QtWidgets.QComboBox(self)
+        self.registrationType.setObjectName(("comboBox"))
+        self.registrationType.addItem("rigid")
+        self.registrationType.addItem("affine")
+        self.registrationType.addItem('iterative affine')
+        self.registrationType.setMaximumSize(150,25)
+
+        self.registrationInput1Value = '100'
+        self.validatorregistrationInput1 = QtGui.QDoubleValidator(0, 15000, 0, self)
+        self.validatorregistrationInput1.setLocale(self.locale())
+        self.registrationInput1 = QtWidgets.QLineEdit(self)
+        self.registrationInput1.setLocale(self.locale())
+        self.registrationInput1.setValidator(self.validatorregistrationInput1)
+        self.registrationInput1.setPlaceholderText('100')
+        self.registrationInput1.returnPressed.connect(self.registrationInput1Enter)
+
+        text_0 = QtWidgets.QLabel(
+            '<font size="4"><p style="font-variant:small-caps;"><b>#Iterations:<b></p>',
+            self)
+
+        self.gridLayoutSettings = QtWidgets.QWidget(self)
+        self.gridLayoutSettingsLayout = QtWidgets.QGridLayout(self.gridLayoutSettings)
+
+        self.gridLayoutSettingsLayout.addWidget(textImageRegistration, 0, 0)
+        self.gridLayoutSettingsLayout.addWidget(self.registrationType, 1, 0)
+        self.gridLayoutSettingsLayout.addWidget(text_0, 2, 0)
+        self.gridLayoutSettingsLayout.addWidget(self.registrationInput1, 2, 1)
+
+        self.mainGridLayout.addWidget(self.gridLayoutSettings, 0, 0)
+
+        self.centralWidget.setLayout(self.mainGridLayout)
+        self.setCentralWidget(self.centralWidget)
+
+    # reg parameters
+    def registrationInput1Enter(self):
+        self.registrationInput1Value = self.registrationInput1.text()
+        self.registrationInput1.clear()
+        self.registrationInput1.setPlaceholderText(str(self.registrationInput1Value))
+
+    def closeEvent(self, event):
+        self.reply = QtWidgets.QMessageBox.question(self, 'Close window?', 'Are you sure you want to close the window?',
+                                     QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
+
+        if self.reply == QtWidgets.QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+if __name__=='__main__':
+    app = QtWidgets.QApplication(sys.argv)
+
+    EnableDarkMode(app)
+
+    ui = Registration_Settings_Dialog()
+    ui.show()
+
+    sys.exit(app.exec())
