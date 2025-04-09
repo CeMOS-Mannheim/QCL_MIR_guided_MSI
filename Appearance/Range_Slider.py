@@ -1,15 +1,14 @@
-#!/usr/bin/python3
-# -*- coding: utf-8 -*-
-import sys, os
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-#Originated from
+"""
+The source code originated from
 #https://stackoverflow.com/questions/67028200/pyqt5-qslider-two-positions
 
-# Originated from
-# https://www.mail-archive.com/pyqt@riverbankcomputing.com/msg22889.html
-# Modification refered from
-# https://gist.github.com/Riateche/27e36977f7d5ea72cf4f
+The source code originated from
+https://www.mail-archive.com/pyqt@riverbankcomputing.com/msg22889.html
+with modification refered from
+https://gist.github.com/Riateche/27e36977f7d5ea72cf4f
+"""
+
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 class RangeSlider(QtWidgets.QSlider):
     sliderMoved = QtCore.pyqtSignal(int, int)

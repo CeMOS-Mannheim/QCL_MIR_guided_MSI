@@ -1,5 +1,11 @@
 from PyQt5 import QtGui, QtCore
 
+""""
+The code originated from 
+https://stackoverflow.com/questions/48256772/dark-theme-for-qt-widgets
+
+"""
+
 def EnableDarkMode(app):
 
     app.setStyle("Fusion")

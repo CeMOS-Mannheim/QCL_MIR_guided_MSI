@@ -1,18 +1,21 @@
-"""
-notes
-"""
+'''
+This dialog window provides the option to set input parameters and methods for the image registration.
+
+In its current implementation it allows for three different registration types: rigid, affine and a combination (rigid + affine).
+
+The number of iterations can be set by the user.
+'''
 
 import sys
 from PyQt5 import QtWidgets, QtGui, QtCore
 
-from QCL.Appearance.DarkMode import EnableDarkMode
+from QCL_v4.Appearance.DarkMode import EnableDarkMode
 
 
 class Registration_Settings_Dialog(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super(Registration_Settings_Dialog, self).__init__(parent)
-        #super().__init__()
-        #self.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
+        self.setLocale(QtCore.QLocale(QtCore.QLocale.English, QtCore.QLocale.UnitedStates))
 
         self.initMe()
 
@@ -22,12 +25,14 @@ class Registration_Settings_Dialog(QtWidgets.QMainWindow):
         self.setMaximumSize(250, 180)
         self.setWindowTitle('Settings')
 
+        # Define central widget
         self.centralWidget = QtWidgets.QWidget(self)
         self.centralWidget.setObjectName('centralWidget')
 
+        # Define main grid layout
         self.mainGridLayout = QtWidgets.QGridLayout(self.centralWidget)
 
-        # Registration Settings
+        # Registration Settings/Parameters
         textImageRegistration = QtWidgets.QLabel(
             '<font size="4"><p style="font-variant:small-caps;"><b>Registration Settings:<b></p>',
             self)
@@ -52,6 +57,7 @@ class Registration_Settings_Dialog(QtWidgets.QMainWindow):
             '<font size="4"><p style="font-variant:small-caps;"><b>#Iterations:<b></p>',
             self)
 
+        # Define grid layout
         self.gridLayoutSettings = QtWidgets.QWidget(self)
         self.gridLayoutSettingsLayout = QtWidgets.QGridLayout(self.gridLayoutSettings)
 
@@ -65,12 +71,13 @@ class Registration_Settings_Dialog(QtWidgets.QMainWindow):
         self.centralWidget.setLayout(self.mainGridLayout)
         self.setCentralWidget(self.centralWidget)
 
-    # reg parameters
+    #function used for changing the input value
     def registrationInput1Enter(self):
         self.registrationInput1Value = self.registrationInput1.text()
         self.registrationInput1.clear()
         self.registrationInput1.setPlaceholderText(str(self.registrationInput1Value))
 
+    # function executed once dialog window is closed
     def closeEvent(self, event):
         self.reply = QtWidgets.QMessageBox.question(self, 'Close window?', 'Are you sure you want to close the window?',
                                      QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)

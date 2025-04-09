@@ -1,10 +1,15 @@
-"""
-notes
-"""
+'''
+This dialog window provides the option to set input parameters for modifying the image mask
+
+In its current implementation it allows "binary closing", "removal of holes" and to "remove objects" in the given order.
+
+Default settings are "1", "200" and "200", respectively.
+'''
 
 import sys
 from PyQt5 import QtWidgets, QtGui, QtCore
-from QCL.Appearance.DarkMode import EnableDarkMode
+
+from QCL_v4.Appearance.DarkMode import EnableDarkMode
 
 
 class Parameters_Mask_Settings_Dialog(QtWidgets.QMainWindow):
@@ -20,9 +25,11 @@ class Parameters_Mask_Settings_Dialog(QtWidgets.QMainWindow):
         self.setMaximumSize(250, 180)
         self.setWindowTitle('Mask Settings')
 
+        # Define central widget
         self.centralWidget = QtWidgets.QWidget(self)
         self.centralWidget.setObjectName('centralWidget')
 
+        # Define main grid layout
         self.mainGridLayout = QtWidgets.QGridLayout(self.centralWidget)
 
         self.MaskBinaryClosingCheckboxIR = QtWidgets.QCheckBox("binary closing")
@@ -61,6 +68,7 @@ class Parameters_Mask_Settings_Dialog(QtWidgets.QMainWindow):
         self.MaskRemoveSmallObjectsInputIR.setPlaceholderText('200')
         self.MaskRemoveSmallObjectsInputIR.returnPressed.connect(self.MaskRemoveSmallObjectsInputIREnter)
 
+        # Define horizontal layout
         HorizontalLayoutMask0 = QtWidgets.QHBoxLayout()
         HorizontalLayoutMask0.addWidget(self.MaskBinaryClosingCheckboxIR)
         HorizontalLayoutMask0.addWidget(self.MaskRemoveHolesObjectsCheckboxIR)
@@ -77,6 +85,7 @@ class Parameters_Mask_Settings_Dialog(QtWidgets.QMainWindow):
         self.centralWidget.setLayout(self.mainGridLayout)
         self.setCentralWidget(self.centralWidget)
 
+    # functions used for changing the input values
     def MaskRemoveSmallObjectsInputIREnter(self):
         self.MaskRemoveSmallObjectsInputValueIR = self.MaskRemoveSmallObjectsInputIR.text()
         self.MaskRemoveSmallObjectsInputIR.clear()
@@ -90,7 +99,7 @@ class Parameters_Mask_Settings_Dialog(QtWidgets.QMainWindow):
         self.MaskBinaryClosingInputIR.clear()
         self.MaskBinaryClosingInputIR.setPlaceholderText(str(self.MaskBinaryClosingInputValueIR))
 
-
+    # function executed once dialog window is closed
     def closeEvent(self, event):
         self.reply = QtWidgets.QMessageBox.question(self, 'Close window?', 'Are you sure you want to close the window?',
                                      QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)

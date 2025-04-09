@@ -1,6 +1,6 @@
 # 22.09.21 SSR
 
-"""Add a shape to an excisting xml-file and return the individual shapes
+"""Add a shape to an excisting xml-file and returns the individual shapes
 
 # https://www.geeksforgeeks.org/serialize-python-dictionary-to-xml/
 # https://wiki.selfhtml.org/wiki/XML/Regeln/XML-Deklaration
@@ -60,21 +60,6 @@ def addshape2xml(segments, capture_ID, calibration_points = zeros((3, 2)), offse
 # Example
 if __name__ == "__main__":
 
-    file_name = r'E:\schmidts\Daten\AlexandraScils\shape_22092021_113014 - Kopie.xml'
-
-    # create radnom list of ndarrays
-    list_ndarray = dict()
-    array_0 = zeros((2, 2))
-    array_1 = ones((3, 2))
-    array_1[2, 1] = 6
-    list_ndarray[0] = array_0
-    list_ndarray[1] = array_1
-    segments = [array(segment) for _, segment in sorted(list_ndarray.items())]
-
-    capture_ID = [''] * size(segments)
-    capture_ID[0] = 'C3'
-    capture_ID[1] = 'A1'
-
-    addshape2xml(segments, capture_ID, fileName = file_name)
+    print('None included here.')
 
 

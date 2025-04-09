@@ -1,9 +1,12 @@
-# 23.10.20 SSR
-
 """Import of an xml-file and return the individual shapes
 
+Infos
 # https://www.geeksforgeeks.org/serialize-python-dictionary-to-xml/
 # https://wiki.selfhtml.org/wiki/XML/Regeln/XML-Deklaration
+
+The .xml file format is adopted from a format from Leica Microsystems for LMD systems.
+
+function to generate a xml file that contains information on the ROIs of interest as well as the PointCount, CapID and Calibration Points.
 
 """
 
@@ -82,17 +85,4 @@ def xml2shape(FileName):
 # Example
 if __name__ == "__main__":
 
-    file_name = r'E:\schmidts\Daten\20210708_FTIR_POL_PEN\LMD\shape_13072021_1649.xml'
-    file_name = r'E:\schmidts\Daten\20210708_FTIR_POL_PEN\LMD\shape_13072021_1648.xml'
-
-    shapes, calibrationPoints, capID = xml2shape(file_name)
-
-    print(calibrationPoints)
-    print(capID)
-    for n, shape in enumerate(shapes):
-        print(n)
-        fig = figure(1)
-        plot(calibrationPoints[:, 0].astype(int), calibrationPoints[:, 1].astype(int), '.r')
-        plot(shape[:, 0].astype(int), shape[:, 1].astype(int), linewidth=2)
-        draw()
-    show()
+    print('None included here.')

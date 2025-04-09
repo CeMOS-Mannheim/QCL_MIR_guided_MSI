@@ -1,4 +1,6 @@
-"""Recognition of holes via contour finding
+"""
+This functions helps to recognize counts with holes.
+
 """
 
 import numpy as np
@@ -12,9 +14,9 @@ def FindContours(image, loop = 5, level = 0.5):
     image = (exposure.rescale_intensity(image, out_range=(0, 1))).astype('uint8')
 
     #obtain number of holes and regions with connectivity of 2 (8pixels)
-    eNum = euler_number(image, connectivity=2)
-    object_nb_eNum = label(image, connectivity=2).max()
-    holes_nb_eNum = object_nb_eNum - eNum
+    eNum = euler_number(image, connectivity=2) # Euler number is the number of objects minus the number of holes
+    object_nb_eNum = label(image, connectivity=2).max() # number of objects
+    holes_nb_eNum = object_nb_eNum - eNum # number oholes
 
     number_of_repetitions = loop
 
@@ -40,7 +42,6 @@ def FindContours(image, loop = 5, level = 0.5):
 
         for i in range(number_of_repetitions):
             if holes_nb_eNum >= 1:
-                donut = donut_holes.copy()
                 donut_filled = binary_fill_holes(donut_holes)
                 donut_holes_inner = donut_holes.astype(bool) ^ donut_filled.astype(bool)
                 donut_holes_filled = binary_fill_holes(donut_holes_inner)
