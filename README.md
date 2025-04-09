@@ -1,4 +1,4 @@
-# Quantum Cascade Laser (QCL) Infrared Imaging (IRI)-guided MALDI Mass Spectrometry Imaging (MSI)
+# Quantum Cascade Laser (QCL) Mid-Infrared Imaging (MIR)-guided MALDI Mass Spectrometry Imaging (MSI)
 
 The purpose of this application is to provide a tool for the proposed QCL-IRI-guided MSI workflow. 
 It accepts infrared imaginging data as an input, performs image registration and segmentation to ultimatively generate a MALDI MSI data aquisition file (.mis) that can be executed on Bruker instruments. 
