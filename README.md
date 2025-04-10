@@ -10,7 +10,8 @@ The implementation of this application allows the user to process their data acc
 
 An executable version of the software is available that runs on Windows.
 
-The software needs a working Python 3 environment including various Python packages. 
+The software needs a working Python 3 environment including various Python packages. An overview of the packages and their used versions is given in the *requirements.txt* document. If you're using a later version, you might need to make a few small changes to the code to get it running.
+
 - Operating system: Windows 10 Education
 - Processor: Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz   3.70 GHz
 - RAM: 32GB
@@ -28,10 +29,16 @@ We provide a [test data set](https://figshare.com/s/6af0358f6b691eb9caaa) that c
 - a hyperspectral test data set of a kidney section (size was reduced 2x for simplicity).
 Accordingly, the respective pixels sizes are: 4.66 µm for the refrence image and 9.32 µm for the hyperspectral dataset.
 
-### 3. Instructions:
-Here, we provide a brief demo with the aim to give an overview of the main functionality of the GUI.
+A link to full data sets are provided in the corresponding publication.
 
-In order to run the GUI, run QuantumReg.py.
+### 3. Bug reporting:
+
+Feedback of any kind, including questions and bug reports, should be directed to the relevant author(s).
+
+### 4. Instructions:
+Here, we provide a brief demo with the aim to give a rough overview of the main functionality of the GUI.
+
+In order to run the GUI, run *M2iraQuantReg.py*. If you wish to only visualise MIR data and perform basic pre-processing steps, please run *M2iraQuantView.py*, which accepts *.zarr, *.fsm and *.pickle files in the current implementation. 
 
 #### Image Registration:
 1)	Open a single wavenumber reference image (.tiff file), may take a while.
