@@ -1,13 +1,16 @@
 # Quantum Cascade Laser (QCL) Mid-Infrared Imaging (MIR)-guided MALDI Mass Spectrometry Imaging (MSI)
 
-The purpose of this application is to provide a tool for the proposed QCL-IRI-guided MSI workflow. 
-It accepts infrared imaginging data as an input, performs image registration and segmentation to ultimatively generate a MALDI MSI data aquisition file (.mis) that can be executed on Bruker instruments. 
-The implementation allows the user to process their data to their specific needs (biological questions) enabling, region specific in-depth MSI analysis.
+The purpose of this application is to provide a tool for the proposed QCL-MIR-guided MSI workflow. 
+It accepts mid-infrared imaging data as an input, performs image registration and segmentation to ultimately generate a MALDI MSI data acquisition file (.mis) that can be executed on respective MS instruments. 
+The implementation of this application allows the user to process their data according to their specific needs (i.e. their biological questions) and thereby facilitates region specific in-depth MSI analysis.
 
 ## Basic Instructions
 
-### 1. Overview
+### 1. Overview and Installation
 
+An executable version of the software is available that runs on Windows.
+
+The software needs a working Python 3 environment including various Python packages. 
 - Operating system: Windows 10 Education
 - Processor: Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz   3.70 GHz
 - RAM: 32GB
